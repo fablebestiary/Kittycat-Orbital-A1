@@ -45,6 +45,8 @@ int main() {
                 bool button = gpio_get(B_PIN);
                 if(button == true) {
                     input.push_back(B_PIN);
+                    // attempt at debounce
+                    sleep_ms(200);
                 }
             }
             // once 4 digits have been input, check if correct
@@ -73,6 +75,8 @@ int main() {
                 bool button = gpio_get(B_PIN);
                 if(button == true) {
                     input.push_back(B_PIN);
+                    // attempt at debounce
+                    sleep_ms(200);
                 }
             }
                 // once 4 digits have been input, check if digits are all equal
@@ -95,7 +99,5 @@ int main() {
                 input.erase(input.begin(), input.end());
             }
         }
-        // attempt at debounce
-            sleep_ms(200);
     }
 }
